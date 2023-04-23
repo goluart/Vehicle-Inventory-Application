@@ -1,4 +1,4 @@
-package com.project.vehiclerental.domain;
+package com.project.vehicleinventory.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

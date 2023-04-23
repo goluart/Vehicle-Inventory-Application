@@ -1,4 +1,4 @@
-package com.project.vehiclerental;
+package com.project.vehicleinventory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,12 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.project.vehiclerental.domain.Gearing;
-import com.project.vehiclerental.domain.GearingRepository;
-import com.project.vehiclerental.domain.User;
-import com.project.vehiclerental.domain.UserRepository;
-import com.project.vehiclerental.domain.Vehicle;
-import com.project.vehiclerental.domain.VehicleRepository;
+import com.project.vehicleinventory.domain.Gearing;
+import com.project.vehicleinventory.domain.GearingRepository;
+import com.project.vehicleinventory.domain.User;
+import com.project.vehicleinventory.domain.UserRepository;
+import com.project.vehicleinventory.domain.Vehicle;
+import com.project.vehicleinventory.domain.VehicleRepository;
 
 @SpringBootApplication
 public class VehicleInventoryApplication {

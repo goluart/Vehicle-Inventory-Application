@@ -1,12 +1,12 @@
-package com.project.vehiclerental.web;
+package com.project.vehicleinventory.web;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.project.vehiclerental.domain.User;
-import com.project.vehiclerental.domain.UserRepository;
+import com.project.vehicleinventory.domain.User;
+import com.project.vehicleinventory.domain.UserRepository;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {

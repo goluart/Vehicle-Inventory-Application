@@ -1,4 +1,4 @@
-package com.project.vehiclerental.web;
+package com.project.vehicleinventory.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

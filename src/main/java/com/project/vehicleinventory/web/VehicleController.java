@@ -1,4 +1,4 @@
-package com.project.vehiclerental.web;
+package com.project.vehicleinventory.web;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.vehiclerental.domain.GearingRepository;
-import com.project.vehiclerental.domain.User;
-import com.project.vehiclerental.domain.UserData;
-import com.project.vehiclerental.domain.UserRepository;
-import com.project.vehiclerental.domain.Vehicle;
-import com.project.vehiclerental.domain.VehicleRepository;
-
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.project.vehicleinventory.domain.GearingRepository;
+import com.project.vehicleinventory.domain.User;
+import com.project.vehicleinventory.domain.UserData;
+import com.project.vehicleinventory.domain.UserRepository;
+import com.project.vehicleinventory.domain.Vehicle;
+import com.project.vehicleinventory.domain.VehicleRepository;
 
 @Controller
 public class VehicleController {

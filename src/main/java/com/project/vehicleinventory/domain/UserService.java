@@ -1,4 +1,4 @@
-package com.project.vehiclerental.domain;
+package com.project.vehicleinventory.domain;
 
 import java.util.List;
 
