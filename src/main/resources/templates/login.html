@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <title>Login</title>
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/bootstrap.min.css"
+    th:href="@{css/bootstrap.min.css}"
+  />
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      width: 350px;
+      max-width: 100%;
+    }
+    .card-header {
+      background-color: #f7f7f7;
+      border-bottom: none;
+      font-weight: bold;
+      text-align: center;
+    }
+    .card-body {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h4>Login</h4>
+    </div>
+    <div th:if="${param.success}" style="text-align: center;">
+      <a style="color: green;">Registration was successful!</a>
+  </div>
+  <div th:if="${param.logout}" style="text-align: center;">
+    <a style="color: red;">You have been logged out successfully!</a>
+</div>
+
+    <div class="card-body">
+      <form th:action="@{/login}" method="post">
+        <div class="alert alert-danger" th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div class="form-group">
+          <label for="username">User Name:</label>
+          <input type="text" id="username" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+      </form>
+      <hr />
+      <form th:action="@{/register}" method="post">
+        <button type="submit" class="btn btn-outline-secondary btn-block">Register</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

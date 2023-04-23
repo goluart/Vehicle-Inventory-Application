@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/bootstrap.min.css"
+      th:href="@{/css/bootstrap.min.css}"
+    />
+    <title>Vehiclelist</title>
+  </head>
+  <style>
+          body {
+        margin-top: 20px;
+      }
+  </style>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <a class="logo-link" th:href="@{/}">
+          <h1 class="text-center logo">
+            Vehicle<span style="color: green"> Inventory</span> Application
+          </h1>
+        </a>
+        <!-- Navi -->
+        <nav class="navbar navbar-expand-lg py-2">
+          <div class="container">
+            <a class="nav-link text-uppercase font-weight-bold text-primary">
+              <span sec:authorize="isAuthenticated">Welcome <span sec:authentication="name"></span>!</span>
+              <span sec:authorize="isAnonymous">Welcome!</span>
+            </a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a th:href="@{/}" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
+                <li sec:authorize="isAuthenticated" class="nav-item">
+                  <a th:href="@{/vehiclelist}" class="nav-link text-uppercase font-weight-bold">Vehiclelist</a>
+              </li>
+                <li sec:authorize="isAuthenticated" class="nav-item">
+                    <a th:href="@{/add}" class="nav-link text-uppercase font-weight-bold">Add Vehicle</a>
+                </li>
+                <li sec:authorize="isAnonymous" class="nav-item">
+                    <a th:href="@{/login}" class="nav-link text-uppercase font-weight-bold">Login</a>
+                </li>
+
+                
+                <form sec:authorize="isAuthenticated" th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-primary btn-block">Logout</button>
+              </form>
+
+                <li sec:authorize="isAnonymous" class="nav-item">
+                    <a th:href="@{/register}" class="nav-link text-uppercase font-weight-bold">Register</a>
+                </li>
+          </div>
+        </nav>
+        <div class="text-primary py-2 container text-center display-4" style="text-align: center; outline-color: black; outline-style: outset; border: 2px solid black; border-radius: 30px;">
+          The functions of this application are</br>
+          <div style="display: inline-block; text-align: start;">
+            &#8226; Add Vehicle </br>
+            &#8226; Edit Vehicle </br>
+            &#8226; Remove Vehicle as admin user </br>
+            &#8226; View Vehiclelist </br>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Add Vehicle</title>
+    <link
+      rel="stylesheet"
+      href="/css/bootstrap.min.css"
+      th:href="@{/css/bootstrap.min.css}"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Add Vehicle</h1>
+      <form th:object="${vehicle}" th:action="@{save}" action="#" method="post">
+        <div class="form-group">
+          <label for="vbrand">Brand</label>
+          <input
+            type="text"
+            id="vbrand"
+            class="form-control"
+            th:field="*{vehicleBrand}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vmodel">Model</label>
+          <input
+            type="text"
+            id="vmodel"
+            class="form-control"
+            th:field="*{model}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vmodelyear">Model Year</label>
+          <input
+            type="number"
+            id="vmodelyear"
+            class="form-control"
+            th:field="*{modelYear}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lplate">License Plate</label>
+          <input
+            type="text"
+            id="lplate"
+            class="form-control"
+            th:field="*{licensePlate}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vcolor">Color</label>
+          <input
+            type="text"
+            id="vcolor"
+            class="form-control"
+            th:field="*{color}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vmileage">Mileage</label>
+          <input
+            type="text"
+            id="vmileage"
+            class="form-control"
+            th:field="*{mileage}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="gearlist">Gearing</label>
+          <select id="gearlist" class="form-control" th:field="*{gearing}">
+            <option
+              th:each="gearing: ${gearing}"
+              th:value="${gearing.gearingid}"
+              th:text="${gearing.name}"
+            ></option>
+          </select>
+        </div>
+         <!-- #authentication.getPrincipal() -->
+        <!-- <input type="hidden" id="userId" class="form-control" th:value="${#authentication.name}" /> -->
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+        <a href="/" class="btn btn-primary mt-3">Back</a>
+      </form>
+    </div>
+  </body>
+</html>
